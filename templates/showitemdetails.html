@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+{% block content %}
+{% if item %}
+<div class="container">
+  <h2>Details : </h2>
+  <div class="card">
+  	<div class="card-header">
+      <ul class="list-group list-group-horizontal">
+    <li class="list-group-item">
+      <img class="card_link" src="{{item.image_url}}" alt="Image" width="150" height="300"></li>
+      <li class="list-group-item">
+       <div class="card-header"><b>Name :</b> {{item.name}}</div>
+       <div class="card-header"><b>Wear type :</b> {{item.wtype}}</div>
+       <div class="card-header"><b>Cloth type :</b> {{item.ctype}}</div>
+    <div class="card-header"><b>Gender :</b> {{item.gender}}</div>
+    <div class="card-header"><b>Price  :</b> {{item.price}}</div>
+    <div class="card-header"><b>Brand :</b> {{item.brand}}</div></li>
+     </ul>
+  </div>
+    <div class="card-body">
+      <h6 class="card-title">TRADITIONAL</h6>
+      <p class="card-text">You can wear it for traditional parties</p>
+      <div class="text-center">
+        <a href="{{url_for('editItem',category_id=item.category_id,item_id=item.item_id)}}" type="edit" class="btn btn-primary">EDIT</a>&nbsp
+        <a href="{{url_for('deleteItem',category_id=item.category_id,item_id=item.item_id)}}" type="delete" class="btn btn-danger">DELETE</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+	<h4>No items</h4>
+{% endif %}
+{% endblock %} 	

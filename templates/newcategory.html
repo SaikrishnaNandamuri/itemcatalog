@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% block content %}
+
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">Create Category</div>
+    <div class="card-body">
+    	 <form action="{{url_for('newCategory')}}" method="POST">
+    	   <div class="form-group">
+    	     <label for="name">Name:</label>
+    	     <input type="text" class="form-control" placeholder="Category name" name="name" required>
+    	     <div class="invalid-feedback">Please fill out this field.</div>
+    	   </div>
+    	   <div class="text-center">
+    	   	<button  type="submit" class="btn btn-success">Submit</button> &nbsp
+    	   	<a href="{{url_for('home')}}" type="reset" class="btn btn-warning">Cancel</a>
+    	   </div>
+    		
+    	 </form>
+    </div> 
+
+  </div>
+</div>
+
+
+  
+ 
+ {% endblock %}

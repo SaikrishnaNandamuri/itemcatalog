@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{% block content %}
+	<div class="container">
+		<div class="card">
+			<div class="card-header">Remove Category : </div>
+			<div class="card-body">
+				<form method="POST" action="" >
+					<div class="form-group">
+					  <label for="sel1">Select Category:</label>
+					  <select name="category" class="form-control" id="sel1">
+					    {% for category in categories %}
+					    <option value="{{category.category_id}}">{{category.name}}</option>
+					    {% endfor %}
+					  </select>
+					 </div>
+					</form>
+					<div class="text-center">
+    	   	<button  type="submit" class="btn btn-success">Submit</button> &nbsp
+    	   	<a href="{{url_for('home')}}" type="reset" class="btn btn-warning">Cancel</a>
+    	   </div>
+    	</div>
+    </div>
+{% endblock %}

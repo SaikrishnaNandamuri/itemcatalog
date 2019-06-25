@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+{% block content %}
+{% if items %}
+	<div class="container">
+  <div class="card-columns">
+  {% for each in items %}
+	
+  <div class="card w-75">
+  	<div class="card-header">
+  		<img class="card-img-top" src="{{each.image_url}}" alt="Image" width="150px" height="300px">
+    </div>
+      <div class="card-body">
+      <h6 class="card-text">Name : </h6>
+      <p>{{each.name}}</p>  
+      <div class="text-right">
+       <i>For More</i> <a href="{{url_for('showItemDetails',category_id=each.category_id,item_id=each.item_id)}}" class="card-link">Details</a>
+      </div>
+      </div>
+    </div>
+	{% endfor %}
+  </div>
+  </div>
+
+{% endif %}
+{% endblock %}
